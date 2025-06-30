@@ -35,36 +35,75 @@ A modern, responsive registration form built with Next.js, featuring multi-step 
 ## Project Structure
 
 ```
-src/
-├── app/                    # Next.js app directory
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout with providers
-│   └── page.tsx           # Main page component
-├── components/            # Atomic Design components
-│   ├── atoms/            # Basic building blocks
-│   │   ├── Button.tsx
-│   │   ├── Input.tsx
-│   │   ├── Select.tsx
-│   │   ├── Checkbox.tsx
-│   │   ├── DatePicker.tsx
-│   │   └── Label.tsx
-│   ├── molecules/        # Simple combinations
-│   │   ├── FormField.tsx
-│   │   ├── FormStep.tsx
-│   │   └── LanguageSelector.tsx
-│   └── organisms/        # Complex combinations
-│       ├── MultiStepForm.tsx
-│       └── RegistrationForm.tsx
-├── data/                 # Static data
-│   └── starterdata.json  # Currencies, regions, validation rules
-├── lib/                  # Utilities and configurations
-│   ├── api.ts           # API service with axios
-│   ├── hooks.ts         # React Query hooks
-│   ├── i18n.ts          # Internationalization setup
-│   ├── utils.ts         # Utility functions
-│   └── validation.ts    # Zod validation schemas
-└── providers/           # React providers
-    └── Providers.tsx    # Query client provider
+test-app/
+├── src/
+│   ├── app/                    # Next.js app directory
+│   │   ├── api/               # API routes
+│   │   │   ├── currencies/    # Currency API endpoints
+│   │   │   ├── regions/       # Region API endpoints
+│   │   │   └── register/      # Registration API endpoints
+│   │   ├── globals.css        # Global styles
+│   │   ├── layout.tsx         # Root layout with providers
+│   │   ├── page.tsx           # Main page component
+│   │   └── favicon.ico        # App favicon
+│   ├── assets/                # Static assets
+│   │   └── fonts/             # Custom fonts
+│   │       ├── Inter/         # Inter font family
+│   │       ├── Rubik/         # Rubik font family
+│   │       └── Gulzar/        # Gulzar font family
+│   ├── components/            # Atomic Design components
+│   │   ├── atoms/            # Basic building blocks
+│   │   │   ├── Button.tsx
+│   │   │   ├── Input.tsx
+│   │   │   ├── Select.tsx
+│   │   │   ├── Checkbox.tsx
+│   │   │   ├── DatePicker.tsx
+│   │   │   ├── Label.tsx
+│   │   │   ├── Toast.tsx
+│   │   │   └── index.ts
+│   │   ├── molecules/        # Simple combinations
+│   │   │   ├── FormField.tsx
+│   │   │   ├── FormStep.tsx
+│   │   │   ├── LanguageSelector.tsx
+│   │   │   ├── ToastContainer.tsx
+│   │   │   └── index.ts
+│   │   ├── organisms/        # Complex combinations
+│   │   │   ├── MultiStepForm.tsx
+│   │   │   ├── RegistrationForm.tsx
+│   │   │   └── index.ts
+│   │   ├── providers/        # Component providers
+│   │   └── ClientWrapper.tsx # Client-side wrapper
+│   ├── data/                 # Static data
+│   │   └── starterdata.json  # Currencies, regions, validation rules
+│   ├── hooks/                # Custom React hooks
+│   │   └── useToast.ts       # Toast notification hook
+│   ├── lib/                  # Utilities and configurations
+│   │   ├── api.ts           # API service with axios
+│   │   ├── constants.ts     # Application constants
+│   │   ├── enums.ts         # TypeScript enums
+│   │   ├── errorUtils.ts    # Error handling utilities
+│   │   ├── hooks.ts         # React Query hooks
+│   │   ├── i18n.ts          # Internationalization setup
+│   │   ├── types.ts         # TypeScript type definitions
+│   │   ├── utils.ts         # Utility functions
+│   │   └── validation.ts    # Zod validation schemas
+│   └── providers/           # React providers
+│       └── Providers.tsx    # Query client provider
+├── public/                   # Public static files
+├── .git/                     # Git repository
+├── .next/                    # Next.js build output
+├── node_modules/             # Dependencies
+├── .gitignore               # Git ignore rules
+├── components.json          # Shadcn UI configuration
+├── eslint.config.mjs        # ESLint configuration
+├── next-env.d.ts            # Next.js TypeScript definitions
+├── next.config.ts           # Next.js configuration
+├── package.json             # Project dependencies and scripts
+├── postcss.config.mjs       # PostCSS configuration
+├── PROJECT_SUMMARY.md       # Project documentation
+├── README.md                # Project readme
+├── tsconfig.json            # TypeScript configuration
+└── yarn.lock                # Yarn lock file
 ```
 
 ## Technologies Used
