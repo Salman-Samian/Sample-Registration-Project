@@ -22,7 +22,9 @@ export default function Home() {
   };
 
   return (
-    <main className={cn(bgGradient, "p-4")}>
+    <main
+      className={cn(bgGradient, "p-4 absolute top-0 left-0 right-0 bottom-0")}
+    >
       <div className="mx-auto max-w-2xl">
         <div className="mb-8 flex justify-between items-center">
           {/* Background Gradient Selector */}

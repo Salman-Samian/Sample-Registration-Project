@@ -1,3 +1,7 @@
+import { Metadata } from "next";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+
 // Tailwind color gradient constants
 export const bgGradient_blue_indigo =
   "bg-gradient-to-br from-blue-50 to-indigo-100";
@@ -42,3 +46,16 @@ export const bgGradient_options = [
   { value: bgGradient_slate_gray, label: "Slate Gray" },
   { value: bgGradient_indigo_purple, label: "Indigo Purple" },
 ];
+
+export const rubik = localFont({
+  src: "../assets/fonts/Rubik/Rubik-VariableFont_wght.ttf",
+  variable: "--font-rubik",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "Registration Form",
+  description: "Multi-step registration form with validation",
+};
+
+export const inter = Inter({ subsets: ["latin"] });

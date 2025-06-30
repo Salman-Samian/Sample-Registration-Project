@@ -45,9 +45,33 @@ export const MultiStepForm = ({ onSuccess, onError }: MultiStepFormProps) => {
     registrationMutation.mutate(data);
   };
 
-  const nextStep = () => {
+  const nextStep = async () => {
     if (currentStep < totalSteps) {
-      setCurrentStep(currentStep + 1);
+      // Trigger validation for current step fields
+      let isValid = false;
+
+      if (currentStep === 1) {
+        isValid = await form.trigger([
+          "firstName",
+          "lastName",
+          "email",
+          "password",
+          "currency",
+        ]);
+      } else if (currentStep === 2) {
+        isValid = await form.trigger([
+          "region",
+          "phone",
+          "nationalCode",
+          "birthday",
+          "ageConfirmation",
+        ]);
+      }
+
+      // Only proceed if validation passes
+      if (isValid) {
+        setCurrentStep(currentStep + 1);
+      }
     }
   };
 
@@ -307,6 +331,7 @@ export const MultiStepForm = ({ onSuccess, onError }: MultiStepFormProps) => {
           {isLastStep ? (
             <Button
               type="submit"
+              onClick={() => onSubmit(form.getValues())}
               disabled={registrationMutation.isPending}
               className="min-w-[100px]"
             >
@@ -315,8 +340,7 @@ export const MultiStepForm = ({ onSuccess, onError }: MultiStepFormProps) => {
           ) : (
             <Button
               type="button"
-              onClick={nextStep}
-              disabled={!form.formState.isValid}
+              onClick={() => nextStep()}
               className="min-w-[100px]"
             >
               {t("next")}
