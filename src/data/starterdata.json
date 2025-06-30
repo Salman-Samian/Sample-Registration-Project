@@ -1,0 +1,160 @@
+{
+  "currencies": [
+    { "value": "USD", "label": "US Dollar" },
+    { "value": "EUR", "label": "Euro" },
+    { "value": "GBP", "label": "British Pound" },
+    { "value": "JPY", "label": "Japanese Yen" },
+    { "value": "CAD", "label": "Canadian Dollar" },
+    { "value": "AUD", "label": "Australian Dollar" },
+    { "value": "CHF", "label": "Swiss Franc" },
+    { "value": "CNY", "label": "Chinese Yuan" },
+    { "value": "INR", "label": "Indian Rupee" },
+    { "value": "BRL", "label": "Brazilian Real" }
+  ],
+  "regions": [
+    { "value": "NA", "label": "North America" },
+    { "value": "EU", "label": "Europe" },
+    { "value": "AS", "label": "Asia" },
+    { "value": "AF", "label": "Africa" },
+    { "value": "SA", "label": "South America" },
+    { "value": "OC", "label": "Oceania" },
+    { "value": "ME", "label": "Middle East" }
+  ],
+  "validationRules": {
+    "firstName": {
+      "required": true,
+      "minLength": 2,
+      "maxLength": 50,
+      "pattern": "^[a-zA-Z\\s]+$"
+    },
+    "lastName": {
+      "required": true,
+      "minLength": 2,
+      "maxLength": 50,
+      "pattern": "^[a-zA-Z\\s]+$"
+    },
+    "email": {
+      "required": true,
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    },
+    "password": {
+      "required": true,
+      "minLength": 8,
+      "pattern": "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]"
+    },
+    "currency": {
+      "required": true
+    },
+    "region": {
+      "required": true
+    },
+    "phone": {
+      "required": true,
+      "pattern": "^[+]?[1-9]\\d{1,14}$"
+    },
+    "nationalCode": {
+      "required": true,
+      "pattern": "^[0-9]{5,15}$"
+    },
+    "birthday": {
+      "required": true,
+      "minAge": 18
+    },
+    "ageConfirmation": {
+      "required": true,
+      "value": true
+    }
+  },
+  "errorMessages": {
+    "en": {
+      "firstName": {
+        "required": "First name is required",
+        "minLength": "First name must be at least 2 characters",
+        "maxLength": "First name must be less than 50 characters",
+        "pattern": "First name can only contain letters and spaces"
+      },
+      "lastName": {
+        "required": "Last name is required",
+        "minLength": "Last name must be at least 2 characters",
+        "maxLength": "Last name must be less than 50 characters",
+        "pattern": "Last name can only contain letters and spaces"
+      },
+      "email": {
+        "required": "Email is required",
+        "pattern": "Please enter a valid email address"
+      },
+      "password": {
+        "required": "Password is required",
+        "minLength": "Password must be at least 8 characters",
+        "pattern": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
+      },
+      "currency": {
+        "required": "Please select a currency"
+      },
+      "region": {
+        "required": "Please select a region"
+      },
+      "phone": {
+        "required": "Phone number is required",
+        "pattern": "Please enter a valid phone number"
+      },
+      "nationalCode": {
+        "required": "National code is required",
+        "pattern": "Please enter a valid national code"
+      },
+      "birthday": {
+        "required": "Birthday is required",
+        "minAge": "You must be at least 18 years old"
+      },
+      "ageConfirmation": {
+        "required": "You must confirm that you are over 18",
+        "value": "You must confirm that you are over 18"
+      }
+    },
+    "fa": {
+      "firstName": {
+        "required": "نام ضروری است",
+        "minLength": "نام باید حداقل ۲ کاراکتر باشد",
+        "maxLength": "نام باید کمتر از ۵۰ کاراکتر باشد",
+        "pattern": "نام فقط می‌تواند شامل حروف و فاصله باشد"
+      },
+      "lastName": {
+        "required": "نام خانوادگی ضروری است",
+        "minLength": "نام خانوادگی باید حداقل ۲ کاراکتر باشد",
+        "maxLength": "نام خانوادگی باید کمتر از ۵۰ کاراکتر باشد",
+        "pattern": "نام خانوادگی فقط می‌تواند شامل حروف و فاصله باشد"
+      },
+      "email": {
+        "required": "ایمیل ضروری است",
+        "pattern": "لطفاً یک ایمیل معتبر وارد کنید"
+      },
+      "password": {
+        "required": "رمز عبور ضروری است",
+        "minLength": "رمز عبور باید حداقل ۸ کاراکتر باشد",
+        "pattern": "رمز عبور باید شامل حداقل یک حرف بزرگ، یک حرف کوچک، یک عدد و یک کاراکتر خاص باشد"
+      },
+      "currency": {
+        "required": "لطفاً یک ارز انتخاب کنید"
+      },
+      "region": {
+        "required": "لطفاً یک منطقه انتخاب کنید"
+      },
+      "phone": {
+        "required": "شماره تلفن ضروری است",
+        "pattern": "لطفاً یک شماره تلفن معتبر وارد کنید"
+      },
+      "nationalCode": {
+        "required": "کد ملی ضروری است",
+        "pattern": "لطفاً یک کد ملی معتبر وارد کنید"
+      },
+      "birthday": {
+        "required": "تاریخ تولد ضروری است",
+        "minAge": "شما باید حداقل ۱۸ سال سن داشته باشید"
+      },
+      "ageConfirmation": {
+        "required": "شما باید تأیید کنید که بالای ۱۸ سال هستید",
+        "value": "شما باید تأیید کنید که بالای ۱۸ سال هستید"
+      }
+    }
+  }
+}
