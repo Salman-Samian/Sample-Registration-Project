@@ -36,6 +36,9 @@ const resources = {
       passwordPlaceholder: "Enter your password",
       phonePlaceholder: "Enter your phone number",
       nationalCodePlaceholder: "Enter your national code",
+      birthdayPlaceholder: "Enter your birthday",
+      ageConfirmationPlaceholder: "I am over 18 years old",
+      regionPlaceholder: "Select a region",
 
       // Messages
       registrationSuccess: "Registration successful!",
@@ -134,6 +137,9 @@ const resources = {
       passwordPlaceholder: "رمز عبور خود را وارد کنید",
       phonePlaceholder: "شماره تلفن خود را وارد کنید",
       nationalCodePlaceholder: "کد ملی خود را وارد کنید",
+      birthdayPlaceholder: "تاریخ تولد خود را وارد کنید",
+      ageConfirmationPlaceholder: "من بالای ۱۸ سال سن دارم",
+      regionPlaceholder: "منطقه را انتخاب کنید",
 
       // Messages
       registrationSuccess: "ثبت نام با موفقیت انجام شد!",
