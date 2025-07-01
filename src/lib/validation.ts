@@ -28,7 +28,11 @@ export const step2Schema = z.object({
   region: z.string().min(1, "region.required"),
   phone: z.string().regex(/^[+]?[1-9]\d{1,14}$/, "phone.pattern"),
   nationalCode: z.string().regex(/^[0-9]{5,15}$/, "nationalCode.pattern"),
-  birthday: z.date().refine((date) => {
+  birthday: z.string().refine((dateString) => {
+    if (!dateString) return false;
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return false;
+
     const today = new Date();
     const age = today.getFullYear() - date.getFullYear();
     const monthDiff = today.getMonth() - date.getMonth();
