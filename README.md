@@ -62,7 +62,8 @@ test-app/
 │   │   │   ├── Toast.tsx
 │   │   │   └── index.ts
 │   │   ├── molecules/        # Simple combinations
-│   │   │   ├── FormField.tsx
+│   │   │   ├── Form.tsx
+│   │   │   ├── FormError.tsx
 │   │   │   ├── FormStep.tsx
 │   │   │   ├── LanguageSelector.tsx
 │   │   │   ├── ToastContainer.tsx
@@ -90,6 +91,11 @@ test-app/
 │   └── providers/           # React providers
 │       └── Providers.tsx    # Query client provider
 ├── public/                   # Public static files
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   ├── window.svg
+│   └── file.svg
 ├── .git/                     # Git repository
 ├── .next/                    # Next.js build output
 ├── node_modules/             # Dependencies
@@ -100,7 +106,6 @@ test-app/
 ├── next.config.ts           # Next.js configuration
 ├── package.json             # Project dependencies and scripts
 ├── postcss.config.mjs       # PostCSS configuration
-├── PROJECT_SUMMARY.md       # Project documentation
 ├── README.md                # Project readme
 ├── tsconfig.json            # TypeScript configuration
 └── yarn.lock                # Yarn lock file
