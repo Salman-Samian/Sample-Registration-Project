@@ -40,6 +40,18 @@ export const MultiStepForm = ({ onSuccess, onError }: MultiStepFormProps) => {
   const form = useForm<RegistrationData>({
     resolver: zodResolver(registrationSchema),
     mode: "onChange",
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      currency: "",
+      region: "",
+      phone: "",
+      nationalCode: "",
+      birthday: "",
+      ageConfirmation: false,
+    },
   });
 
   const registrationMutation = useMutation({

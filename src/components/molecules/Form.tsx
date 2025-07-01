@@ -215,11 +215,15 @@ const FormMessage = React.forwardRef<
   let body = children;
 
   if (error?.message) {
-    // Try to translate the error message
-    const translatedError = t(error.message);
+    // Try to translate the error message using the nested structure from i18n.ts
+    const translatedError = t(`errors.${error.message}`);
+
+    // If the nested translation doesn't exist, try the direct message
     body =
-      translatedError !== error.message
+      translatedError !== `errors.${error.message}`
         ? translatedError
+        : t(error.message) !== error.message
+        ? t(error.message)
         : String(error.message);
   }
 

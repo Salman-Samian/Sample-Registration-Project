@@ -26,24 +26,33 @@ export const step1Schema = z.object({
 // Step 2 Schema
 export const step2Schema = z.object({
   region: z.string().min(1, "region.required"),
-  phone: z.string().regex(/^[+]?[1-9]\d{1,14}$/, "phone.pattern"),
-  nationalCode: z.string().regex(/^[0-9]{5,15}$/, "nationalCode.pattern"),
-  birthday: z.string().refine((dateString) => {
-    if (!dateString) return false;
-    const date = new Date(dateString);
-    if (isNaN(date.getTime())) return false;
+  phone: z
+    .string()
+    .min(1, "phone.required")
+    .regex(/^[+]?[1-9]\d{1,14}$/, "phone.pattern"),
+  nationalCode: z
+    .string()
+    .min(1, "nationalCode.required")
+    .regex(/^[0-9]{5,15}$/, "nationalCode.pattern"),
+  birthday: z
+    .string()
+    .min(1, "birthday.required")
+    .refine((dateString) => {
+      if (!dateString) return false;
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return false;
 
-    const today = new Date();
-    const age = today.getFullYear() - date.getFullYear();
-    const monthDiff = today.getMonth() - date.getMonth();
-    if (
-      monthDiff < 0 ||
-      (monthDiff === 0 && today.getDate() < date.getDate())
-    ) {
-      return age - 1 >= 18;
-    }
-    return age >= 18;
-  }, "birthday.minAge"),
+      const today = new Date();
+      const age = today.getFullYear() - date.getFullYear();
+      const monthDiff = today.getMonth() - date.getMonth();
+      if (
+        monthDiff < 0 ||
+        (monthDiff === 0 && today.getDate() < date.getDate())
+      ) {
+        return age - 1 >= 18;
+      }
+      return age >= 18;
+    }, "birthday.minAge"),
   ageConfirmation: z
     .boolean()
     .refine((val) => val === true, "ageConfirmation.value"),
